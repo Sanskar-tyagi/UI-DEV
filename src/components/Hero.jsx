@@ -8,16 +8,24 @@ import {
   Link,
   Icon,
   Flex,
+  Image,
 } from "@chakra-ui/react";
 import { GoChevronRight } from "react-icons/go";
 import { AiFillApple, AiFillStar } from "react-icons/ai";
 import Scene from "./Scene";
-
+import Phone from "../assets/images/Phone.png";
 export default function Hero() {
   return (
-    <Box sx={{ borderRadius: "10%" }} py={24} backgroundColor={"#EFECFF"}>
+    <Box
+      sx={{ borderRadius: "10%" }}
+      py={24}
+      backgroundColor={"#EFECFF"}
+      background={`url(
+        "https://assets.website-files.com/638ff800599a0427a59d547f/639166b5f088823230aed540_gradient_1.jpg"
+      )`}
+    >
       <Stack
-        mx={12}
+        mx={14}
         mt={5}
         direction={{ base: "column", md: "row" }}
         justifyContent="space-around"
@@ -25,8 +33,9 @@ export default function Hero() {
         <Stack
           direction="column"
           spacing={6}
+          px={10}
           justifyContent="center"
-          maxW="580px"
+          maxW="680px"
         >
           <HStack
             as={Link}
@@ -37,7 +46,7 @@ export default function Hero() {
             bg={useColorModeValue("gray.300", "gray.700")}
           >
             <Box
-              py={1}
+              py={2}
               px={2}
               lineHeight={1}
               rounded="full"
@@ -63,29 +72,27 @@ export default function Hero() {
           </chakra.h1>
 
           <HStack
-            spacing={{ base: 0, sm: 2 }}
+            spacing={{ base: 0, sm: 6 }}
             mb={{ base: "3rem !important", sm: 0 }}
             flexWrap="wrap"
           >
             <chakra.button
               w={{ base: "100%", sm: "auto" }}
               h={12}
-              px={4}
+              px={5}
               display={"flex"}
               justifyContent={"space-between;"}
               alignItems={"center"}
               color="white"
-              size="md"
               rounded="md"
               mb={{ base: 2, sm: 0 }}
-              zIndex={5}
               bgGradient="linear(to-l, #0ea5e9,#2563eb)"
               _hover={{
                 bgGradient: "linear(to-l, #0ea5e9,#2563eb)",
                 opacity: 0.9,
               }}
             >
-              <Icon as={AiFillApple} h={10} w={10} ml={1} />
+              <Icon as={AiFillApple} h={9} w={9} />
               <Flex direction={"column"}>
                 <chakra.span fontSize={"10px"}> Download on </chakra.span>
                 <chakra.span>App Store </chakra.span>
@@ -100,7 +107,8 @@ export default function Hero() {
               w={{ base: "100%", sm: "auto" }}
               border="1px solid"
               borderColor="gray.300"
-              p={3}
+              px={3}
+              py={2}
               lineHeight={1.28}
               rounded="md"
               boxShadow="md"
@@ -117,8 +125,25 @@ export default function Hero() {
             </Box>
           </HStack>
         </Stack>
-        <Box width={"40%"}>
+        <Box flex="3" className="dot" position="relative" width={"40%"}>
           <Scene></Scene>
+          <Image
+            className="float"
+            width="270px"
+            height="550px"
+            object-fit="contain"
+            position="absolute"
+            top="-5"
+            bottom="0"
+            borderRadius={"1.9em"}
+            left="230px"
+            right="0"
+            margin="0"
+            src={
+              "https://assets.website-files.com/638ff800599a0427a59d547f/6393f030fcb1045459eb4780_app_1-p-500.jpg"
+            }
+            alt=""
+          />
         </Box>
       </Stack>
     </Box>
