@@ -65,7 +65,12 @@ const Milestones = () => {
               Wrong with self-improvement & how we're fixing it.
             </Text>
           </HStack>
-          <chakra.h3 fontSize="4xl" fontWeight="bold" textAlign="center">
+          <chakra.h3
+            fontSize="4xl"
+            style={{ margin: "0px" }}
+            fontWeight="bold"
+            textAlign="center"
+          >
             Self-improvement. Ugh.
           </chakra.h3>
         </HStack>

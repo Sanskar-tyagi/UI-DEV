@@ -9,7 +9,7 @@ export default function CTA() {
   };
   return (
     <div>
-      <Eq data={data} headings={"Eqig"}></Eq>
+      <Eq data={data} headings={"EQ beats IQ"}></Eq>
     </div>
   );
 }
