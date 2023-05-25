@@ -1,7 +1,10 @@
 import "./App.css";
-import Eq from "./components/Eq";
+import CTA from "./components/CTA";
+import CTAA from "./components/CTAA";
 import Hero from "./components/Hero";
+import Meet from "./components/Meet";
 import Slider from "./components/Slider";
+import Milestones from "./components/TimeLine";
 import Nav from "./components/nav";
 
 function App() {
@@ -9,8 +12,11 @@ function App() {
     <>
       <Nav></Nav>
       <Hero></Hero>
-      <Eq></Eq>
+      <CTA></CTA>
       <Slider></Slider>
+      <Meet></Meet>
+      <Milestones></Milestones>
+      <CTAA></CTAA>
     </>
   );
 }

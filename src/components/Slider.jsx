@@ -8,8 +8,8 @@ import e3 from "../assets/images/Emojis/emoji (3).png";
 import e4 from "../assets/images/Emojis/emoji (4).png";
 import "swiper/css";
 import { gsap } from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useState } from "react";
 export default function Slider() {
   const data = {
     inputs: [
@@ -46,19 +46,28 @@ export default function Slider() {
     avatar: [e1, e2, e3, e4, e3, e4],
   };
   gsap.registerPlugin(ScrollTrigger);
-  const test = () => {
-    console.log("assssssssssssssssss");
-  };
-  ScrollTrigger.create({
-    trigger: "#work",
-    onEnter: test,
-    //onLeave: myLeaveFunc,
-    //onEnterBack: myEnterFunc,
-    //onLeaveBack: myLeaveFunc
-  });
+  useEffect(() => {
+    const test = () => {
+      setds({
+        delay: 1000,
+        disableOnInteraction: true,
+        stopOnLastSlide: true,
+      });
+    };
+
+    ScrollTrigger.create({
+      trigger: "#test",
+      onEnter: test,
+      //onLeave: myLeaveFunc,
+      //onEnterBack: myEnterFunc,
+      //onLeaveBack: myLeaveFunc
+    });
+  }, []);
+  const [ds, setds] = useState(false);
   return (
     <Stack
       className="swiper-container"
+      id="test"
       justifyContent={"center"}
       py={15}
       height={"60vh"}
@@ -68,11 +77,7 @@ export default function Slider() {
       <Swiper
         slidesPerView={4}
         spaceBetween={30}
-        autoplay={{
-          delay: 1000,
-          disableOnInteraction: true,
-          stopOnLastSlide: true,
-        }}
+        autoplay={ds}
         modules={[Autoplay]}
         className="mySwiper"
       >

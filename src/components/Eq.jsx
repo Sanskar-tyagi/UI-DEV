@@ -1,16 +1,13 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
 import BlogCard from "./BlogCard";
+import PropTypes from "prop-types";
 
-export default function Eq() {
-  const data = {
-    inputs: [
-      "People with high emotional intelligence (EQ) live more fulfilled lives. They tend to be happier and have healthier relationships.",
-      " They are more successful in their pursuits and make for inspiring leaders. According to science, they earn $29k a year.",
-    ],
-  };
+export default function Eq({ data, headings, span }) {
+  const input = data;
+
   return (
     <Stack
-      height={"40vh"}
+      height={"60vh"}
       justifyContent={"space-evenly"}
       alignItems={"center"}
       display={"flex"}
@@ -23,14 +20,20 @@ export default function Eq() {
           fontWeight="bold"
           textAlign="left"
         >
-          EQ beats IQ{" "}
+          {headings}
+          <Text color={"teal.300"}>{span}</Text>
         </Text>
       </Box>
       <Stack justifyContent={"center"} display={"flex"} flexDirection={"row"}>
-        {data.inputs.map((input) => (
+        {input.inputs.map((input) => (
           <BlogCard key={input} input={input} shadow={false} avatar={""} />
         ))}
       </Stack>
     </Stack>
   );
 }
+Eq.propTypes = {
+  data: PropTypes.object.isRequired,
+  headings: PropTypes.string,
+  span: PropTypes.string,
+};

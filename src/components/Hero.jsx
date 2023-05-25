@@ -13,7 +13,6 @@ import {
 import { GoChevronRight } from "react-icons/go";
 import { AiFillApple, AiFillStar } from "react-icons/ai";
 import Scene from "./Scene";
-import Phone from "../assets/images/Phone.png";
 export default function Hero() {
   return (
     <Box
@@ -146,6 +145,36 @@ export default function Hero() {
           />
         </Box>
       </Stack>
+      <>
+        <Image
+          position={"absolute"}
+          top={"14vh"}
+          right={"12vw"}
+          src="https://assets.website-files.com/63be6b95d526b7b72dcb1d66/63c668f84b209dd2c0dd8120_Path3.png"
+          alt=""
+        />
+        <Image
+          position={"absolute"}
+          top={"14vh"}
+          right={"42vw"}
+          src="https://assets.website-files.com/63be6b95d526b7b72dcb1d66/63c668fb65ab0c02ae2e92b6_Shape%207.png"
+          alt=""
+        />
+        <Image
+          position={"absolute"}
+          top={"55vh"}
+          right={"12vw"}
+          src="https://assets.website-files.com/63be6b95d526b7b72dcb1d66/63c788ee1500088ead20ec6a_Path%20(6).png"
+          alt=""
+        />
+        <Image
+          position={"absolute"}
+          top={"48vh"}
+          right={"42vw"}
+          src="https://assets.website-files.com/63be6b95d526b7b72dcb1d66/63c668f5199d461998784c89_Path%204.png"
+          alt=""
+        />
+      </>{" "}
     </Box>
   );
 }
